@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }}</title>
+</head>
+<body>
+    <h1>{{ site.message }}</h1>
+    <div>{{ colors.0 }}</div>
+    <div>{{ colors.2 }}</div>
+    <div>{{ date.day }}/{{ date.month}}/{{ date.year }}</div>
+
+    <!-- ตัวอย่างการเขียน if...else-->
+    {% if 1 == 1 %}
+        <div>1 equals to 1</di>
+    {% endif %}
+
+    {% if date.day >= 15 %}
+        <div>Today</div>
+    {% elif date.day >= 10 %}
+        <div>Last Day</div>
+    {% else %}
+        <div>Unknow Day</div>
+    {% endif %}
+
+    <!-- ตัวอย่างการเขียน loop for -->
+    {% for c in colors reversed %}
+        <li>{{ c }}</li>
+    {% endfor %}
+
+    {% for k, v in site.items reversed %}
+        <div>{{ k }}: {{ v }}</div>
+    {% endfor %}
+
+</body>
+</html>
